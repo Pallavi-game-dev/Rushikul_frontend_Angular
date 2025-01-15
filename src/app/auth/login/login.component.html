@@ -1,0 +1,50 @@
+
+
+<mat-card>
+  <mat-grid-list cols="2" rowHeight="3:3">
+    <mat-grid-tile>
+      <div><img src="../../../assets/login.jpeg"></div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <form  [formGroup]="loginForm">
+        <div class="form-div">
+          <mat-form-field appearance="outline" class="materialBackground">
+            <mat-label>User Id</mat-label>
+            <input matInput placeholder="Test@gmail.com" formControlName="userId" />
+            <mat-error *ngIf="
+                loginForm.controls['userId'].invalid &&
+                (loginForm.controls['userId'].dirty ||
+                loginForm.controls['userId'].touched)
+              ">
+              <span *ngIf="loginForm.controls['userId'].hasError('required')">user ID  Name is
+                required.</span>
+              <span *ngIf="
+                  loginForm.controls['userId'].hasError('email')
+                ">Please Enter Valid User Id </span>
+
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="form-div">
+          <mat-form-field appearance="outline" class="materialBackground">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Test@gmail.com" formControlName="password" type="password"/>
+            <mat-error *ngIf="
+                loginForm.controls['password'].invalid &&
+                (loginForm.controls['password'].dirty ||
+                loginForm.controls['password'].touched)
+              ">
+              <span *ngIf="loginForm.controls['password'].hasError('required')">Password is required.</span>
+
+
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <app-button (click)="onLogin()" class="form-button" buttonClass="primary" [buttontype]="'mat-button'"
+        ButtonText="Approve"></app-button>
+      </form>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</mat-card>

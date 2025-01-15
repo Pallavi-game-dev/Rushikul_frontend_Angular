@@ -1,0 +1,91 @@
+<div class="add_Customer_con">
+<div class="dailogHeader">
+    <div class="dailog-title">
+      Add Customer
+    </div>
+    <div class="dailog_cancel_btn" (click)="onNoClick()">+</div>
+</div>
+<div class="add_Customer_form">
+  <form [formGroup]="customerFrom" class="my-grid-form">
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+          <input matInput type="text" formControlName="fname" placeholder="First Name" >
+          <mat-error *ngIf=" customerFrom.controls['fname'].invalid &&(customerFrom.controls['fname'].dirty || customerFrom.controls['fname'].touched)">
+          <span *ngIf="customerFrom.controls['fname'].hasError('required')">First Name is required.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+          <input matInput type="text" formControlName="lname" placeholder="Last Name" >
+          <mat-error *ngIf=" customerFrom.controls['lname'].invalid &&(customerFrom.controls['lname'].dirty || customerFrom.controls['lname'].touched)">
+          <span *ngIf="customerFrom.controls['lname'].hasError('required')">Last Name is required.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Id</mat-label>
+          <input matInput type="text" formControlName="email" placeholder="Last Name" >
+          <mat-error *ngIf=" customerFrom.controls['email'].invalid &&(customerFrom.controls['email'].dirty || customerFrom.controls['email'].touched)">
+          <span *ngIf="customerFrom.controls['email'].hasError('required')">Email Id is required.</span>
+          <span *ngIf="customerFrom.controls['email'].hasError('email')">Invalid Email Id.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+          <input matInput type="text" formControlName="mobile" placeholder="Mobile Number" >
+          <mat-error *ngIf=" customerFrom.controls['mobile'].invalid &&(customerFrom.controls['mobile'].dirty || customerFrom.controls['mobile'].touched)">
+          <span *ngIf="customerFrom.controls['mobile'].hasError('required')">Mobile number is required.</span>
+          <span *ngIf="customerFrom.controls['mobile'].hasError('maxlength')">Mobile number cannot be more than 10 digits.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>Addharcard Number</mat-label>
+          <input matInput type="text" formControlName="addharcard" placeholder="Addharcard Number" >
+          <mat-error *ngIf=" customerFrom.controls['addharcard'].invalid &&(customerFrom.controls['addharcard'].dirty || customerFrom.controls['addharcard'].touched)">
+          <span *ngIf="customerFrom.controls['addharcard'].hasError('required')">Addharcard Numberis required.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <mat-form-field appearance="outline">
+        <mat-label>Pancard Number</mat-label>
+          <input matInput type="text" formControlName="pancard" placeholder="Pancard Number" >
+          <mat-error *ngIf=" customerFrom.controls['pancard'].invalid &&(customerFrom.controls['pancard'].dirty || customerFrom.controls['pancard'].touched)">
+          <span *ngIf="customerFrom.controls['pancard'].hasError('required')">Pancard Number is required.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="my-form-field-half">
+      <app-select [items]="['Male','Female']" [placeholder]="'Select Gendar'" (selectChange)="onGendarSelect($event)"></app-select>
+    </div>
+    <div class="my-form-field-half">
+      <app-select [items]="branchList" [bindLabelKey]="'branch_name'" [bindValueKey]="'branch_id'"  [placeholder]="'Select Branch'" (selectChange)="onBranchSelect($event)" ></app-select>
+    </div>
+    <div class="my-form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea matInput  formControlName="address" placeholder="Address"></textarea>
+          <mat-error *ngIf="customerFrom.controls['address'].invalid &&(customerFrom.controls['address'].dirty || customerFrom.controls['address'].touched)">
+          <span *ngIf="customerFrom.controls['address'].hasError('required')">Address is required.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+  <ng-container>
+    <div class="dailog_footer">
+      <app-button class="form-button" buttonClass="outline_primary" [buttontype]="'mat-button'" ButtonText="Cancel"
+        (click)="onNoClick()"></app-button>
+      <app-button class="form-button" buttonClass="primary" [buttontype]="'mat-button'" ButtonText="Submit"
+        [disabled]="!customerFrom.valid" (click)="onSubmitForm()"></app-button>
+    </div>
+  </ng-container>
+</div>

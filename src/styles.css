@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-form-field{
+  width: 100%;
+}
+
+.dailog-title{
+
+}
+.dailogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: 1px solid #ECEEF6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.dailog_cancel_btn {
+  font-size: 35px;
+  transform: rotate(45deg);
+  font-weight: 300;
+  padding: 0px;
+  cursor: pointer;
+}
+.dailog_footer{
+  padding: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 52px;
+  align-items: center;
+  box-sizing: content-box;
+  margin-bottom: -24px;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #ECEEF6;
+  margin-top: 10px;
+}
+.my-form-field{
+  width: 99%;
+}
+.my-form-field-half{
+  width: 49%;
+}
+.my-grid-form{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerLabel{
+  font-size: 20px;
+  font-weight: bold;
+}

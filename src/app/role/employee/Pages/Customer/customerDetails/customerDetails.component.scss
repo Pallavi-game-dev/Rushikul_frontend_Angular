@@ -1,0 +1,44 @@
+.Kunadali_title{
+  padding: 10px;
+  color: white;
+  background: #035e96;
+  font-weight: bolder;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+.profile_con{
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  .profile-mail{
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.profile_subcon{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  .profile_subcon_grid{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    font-size: 16px;
+    label{
+      font-weight: 800;
+
+    }
+  }
+}
+.details_container{
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 63px;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+
+<div class="selectOption">
+  <mat-form-field appearance="outline" [class.mat-focused]="focused">
+    <mat-select *ngIf="bindValueKey" (selectionChange)="selection($event)" [placeholder]="placeholder" [disableOptionCentering]="true" required disabled="{{disabled}}"  [value]="selected">
+      <mat-option *ngFor="let item of items" [value]="item[bindValueKey]">
+        {{ item[bindLabelKey] }}
+      </mat-option>
+    </mat-select>
+
+    <mat-select
+      *ngIf="!bindValueKey"
+      (selectionChange)="selection($event)"
+      [placeholder]="placeholder"
+      [value]="selected"
+      [disableOptionCentering]="true"
+      required
+      disabled="{{disabled}}"
+    >
+      <mat-option *ngFor="let item of items" [value]="item">
+        {{ item }}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+</div>

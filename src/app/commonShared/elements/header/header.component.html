@@ -1,0 +1,62 @@
+<mat-toolbar class="header_toolbar" [ngClass]="mobileView?'mobileView':''">
+
+
+  <div class="headerItem" >
+    <div class="app-title">
+      <!-- <span class="activeUser">( {{activeUser}} )</span> -->
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <ul class="ul-menu"  [ngClass]="menuLink.length==1? 'ul-menu-left' : ''">
+      <li class="dropdown" *ngFor="let menu of menuLink" routerLinkActive="active_link">
+        <a *ngIf="menu.type != 'dropdown'" [routerLink]="menu.url" >
+          <span class="link-text">{{menu.title}}</span>
+        </a>
+        <ng-container *ngIf="menu.type === 'dropdown'" class="submenu">
+          <a [routerLink]="menu.url" >
+            <span class="link-text">{{menu.title}}</span>
+            <mat-icon class="dropdown_icon">keyboard_arrow_down</mat-icon>
+          </a>
+          <div class="sub-menu">
+            <a *ngFor="let submenus of menu.submenus" routerLinkActive="active"
+              [routerLink]="submenus.url">{{submenus.title}}</a>
+          </div>
+        </ng-container>
+      </li>
+    </ul>
+  </nav>
+
+  <div layout="row" >
+    <div class="profile_container">
+      <!-- <mat-icon>person</mat-icon>&nbsp; -->
+      <div class="vl"></div>
+      <!-- <div class="currentConitainer">
+        <div class="currenttime">{{time}}</div>
+      </div> -->
+
+      <div class="profile"  [matMenuTriggerFor]="menu">
+        <mat-icon>user</mat-icon>
+        <h1 class="profile_name">{{username}}</h1>
+        <button class="profile-menu-button" mat-icon-button >
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+      </div>
+    </div>
+    <mat-menu #menu="matMenu" class="logoutMine" style="margin-top: 10px;" xPosition="after">
+
+      <button mat-menu-item class="log_out_button" (click)="logout('./')">
+        <span class="material-icons">logout</span>&nbsp;&nbsp;&nbsp;Log&nbsp;Out
+      </button>
+
+    </mat-menu>
+  </div>
+  <!-- <button mat-icon-button *ngIf="mobileView" (click)="emitSidebarToggle()">
+    <mat-icon *ngIf="!isOpened">menu</mat-icon>
+    <mat-icon *ngIf="isOpened">close</mat-icon>
+  </button> -->
+
+</mat-toolbar>
+
+
+

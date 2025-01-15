@@ -1,0 +1,184 @@
+@import "../../constants/color.scss";
+
+// Primary Button
+.primary {
+  height: 100%;
+  width: 100%;
+  background-color: $primary;
+  color: $white;
+  border-radius: 4px;
+  padding: 6px 10px 6px 10px;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+
+  ::ng-deep {
+    .mat-progress-spinner {
+      margin: 0 auto;
+    }
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: $white !important;
+    }
+  }
+}
+
+.primary:hover {
+  background-color: $primary_hover;
+  color: $white;
+}
+
+.primary:active {
+  background-color: $primary_pressed;
+  color: $white;
+}
+
+.primary:disabled {
+  background-color: $primary;
+  opacity: 20%;
+  color: $light;
+}
+
+// Secondary Buttons
+.secondary {
+  height: 100%;
+  width: 100%;
+  background-color: $secondary;
+  color: $white;
+  border-radius: 4px;
+  line-height:21px;
+  padding: 6px 10px 6px 10px;
+  ::ng-deep {
+    .mat-progress-spinner {
+      margin: 0 auto;
+    }
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: $secondary !important;
+    }
+  }
+}
+
+.secondary:hover {
+  background-color: $secondary_hover;
+  color: $white;
+}
+
+.secondary:disabled {
+  background-color: $anti_flash_white;
+  color: $light;
+  opacity: 0.4;
+}
+
+.secondary:active {
+  background-color: $secondary_pressed;
+  color: $light;
+}
+
+// Outline Primary
+.outline_primary {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid $primary;
+  color: $primary;
+  background-color: $white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  ::ng-deep {
+    .mat-progress-spinner {
+      margin: 0 auto;
+    }
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: $primary !important;
+    }
+  }
+}
+
+.outline_primary:hover {
+  border: 1px solid $primary_hover !important;
+  color: $primary_hover !important;
+}
+
+.outline_primary:active {
+  border: 1px solid $primary_pressed !important;
+  color: $primary_pressed !important;
+}
+
+.outline_primary:disabled {
+  border: 1px solid $primary;
+  opacity: 0.2;
+  color: $primary;
+}
+
+// Outline Secondary
+.outline_secondary {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid $secondary;
+  color: $secondary;
+  background-color: $white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+
+  ::ng-deep {
+    .mat-progress-spinner {
+      margin: 0 auto;
+    }
+    .mat-progress-spinner circle,
+    .mat-spinner circle {
+      stroke: $primary !important;
+    }
+  }
+}
+
+.outline_secondary:hover {
+  border-color: $secondary_hover;
+  color: $secondary_hover;
+}
+
+.outline_secondary:active {
+  border-color: $secondary_pressed;
+  color: $secondary_pressed;
+}
+
+.outline_secondary:disabled {
+  border-color: $secondary_hover;
+  opacity: 0.4;
+  color: $secondary_hover;
+}
+.Anti_flash_white {
+  height: 100%;
+  width: 100%;
+  background-color: $flash_white;
+  color: $Steel;
+  border-radius: 4px;
+  padding: 6px 10px 6px 10px;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .primary,
+  .outline_primary,
+  .outline_secondary,
+  .secondary {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+  }
+}
+
+.spinner-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

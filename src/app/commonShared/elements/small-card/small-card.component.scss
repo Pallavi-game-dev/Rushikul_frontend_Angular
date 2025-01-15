@@ -1,0 +1,10 @@
+.example-card{
+  width: 275px;
+  border: 1px solid rgba(3, 94, 150, 0.6705882353);
+  box-shadow: 5px 6px 1px -1px #035e9654, 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+ }
+ .example-card:hover{
+  transform: scale(1.02)!important;
+
+}

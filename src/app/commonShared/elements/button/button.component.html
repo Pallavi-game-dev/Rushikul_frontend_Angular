@@ -1,0 +1,20 @@
+<button
+style="width: fit-content;"
+  [class]="buttonClass"
+  (click)="onClick($event)"
+  [type]="buttontype"
+  [disabled]="disabled"
+  mat-button
+>
+  <!-- <mat-icon *ngIf="ButtonIcon">{{ButtonIcon}}</mat-icon>{{ButtonText}} -->
+
+  <ng-container *ngIf="!loading; else spinnerTemplate">
+    <mat-icon *ngIf="ButtonIcon">{{ ButtonIcon }}</mat-icon>
+    {{ ButtonText }}
+  </ng-container>
+  <ng-template #spinnerTemplate class="spinner-div">
+    <mat-spinner diameter="20"></mat-spinner>
+
+
+  </ng-template>
+</button>
