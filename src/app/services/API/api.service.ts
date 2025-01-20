@@ -6,33 +6,41 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  baseUrl=environment.baseUrl
-  currentUser_id:string = '';
-constructor(private http:HttpClient) { }
+  baseUrl = environment.baseUrl
+  currentUser_id: number = 1;
+  constructor(private http: HttpClient) { }
 
-  getCustomerList(){
-    return this.http.get(`${this.baseUrl}get_customer_details`)
+  getCustomerList(body: any) {
+    return this.http.post(`${this.baseUrl}get_customer_details`, body)
   }
-  createCustomer(body:any){
-    return this.http.post(`${this.baseUrl}add_customer`,body)
+  createCustomer(body: any) {
+    return this.http.post(`${this.baseUrl}add_customer`, body)
   }
-  addNewUser(body:any){
-    return this.http.post(`${this.baseUrl}add_user`,body)
+  addNewUser(body: any) {
+    return this.http.post(`${this.baseUrl}add_user`, body)
   }
-  getUserDetails(){
+  getUserDetails() {
     return this.http.get(`${this.baseUrl}get_user_details`)
   }
-  getDirectorDetails(){
+  getDirectorDetails() {
     return this.http.get(`${this.baseUrl}get_user_director`)
   }
-  getAgentDetails(){
+  getAgentDetails() {
     return this.http.get(`${this.baseUrl}get_user_agent`)
   }
-  addNewBranch(body:any){
-    return this.http.post(`${this.baseUrl}add_branch`,body)
+  addNewBranch(body: any) {
+    return this.http.post(`${this.baseUrl}add_branch`, body)
   }
-  getBranchList(){
+  getBranchList() {
     return this.http.get(`${this.baseUrl}get_branch`)
+  }
+
+  deactivateCustomer(customer_id: number) {
+    return this.http.delete(`${this.baseUrl}delete_customer?customer_id=${customer_id}`)
+  }
+
+  updateCustomer(body: any) {
+    return this.http.post(`${this.baseUrl}update_customer`, body)
   }
 
 }

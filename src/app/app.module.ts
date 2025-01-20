@@ -15,8 +15,6 @@ import { ApiService } from './services/API/api.service';
 @NgModule({
   declarations: [
     AppComponent,
-
-
   ],
   imports: [
     BrowserModule,

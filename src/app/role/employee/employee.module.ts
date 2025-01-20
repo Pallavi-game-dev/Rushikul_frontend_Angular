@@ -13,6 +13,7 @@ import { AddCustomerComponent } from './Pages/Customer/add-customer/add-customer
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
 import { CustomerDetailsComponent } from './Pages/Customer/customerDetails/customerDetails.component';
+import { ActionsComponent } from './Pages/Customer/components/actions/actions.component';
 
 
 
@@ -25,7 +26,8 @@ import { CustomerDetailsComponent } from './Pages/Customer/customerDetails/custo
     DepositesComponent,
     LoanComponent,
     AddCustomerComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    ActionsComponent,
 
   ],
   imports: [
@@ -33,7 +35,7 @@ import { CustomerDetailsComponent } from './Pages/Customer/customerDetails/custo
     EmployeeRoutingModule,
     CommonSharedModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class EmployeeModule { }

@@ -1,0 +1,9 @@
+.action-icons[_ngcontent-eie-c312] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+mat-icon {
+  cursor: pointer;
+}

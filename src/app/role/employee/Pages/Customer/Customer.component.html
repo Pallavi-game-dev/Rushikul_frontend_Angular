@@ -1,21 +1,13 @@
 <div class="customerPageContainer">
-<div class="customer_header">
-  <label class="headerLabel">
-    Customers
-  </label>
-  <app-button [buttonClass]="'primary'" [ButtonText]="'Add New Customer'" (clicked)="onAddNewCustomer()"></app-button>
+  <div class="customer_header">
+    <label class="headerLabel">
+      Customers
+    </label>
+    <app-button [buttonClass]="'primary'" [ButtonText]="'Add New Customer'" (clicked)="onAddNewCustomer()"></app-button>
+  </div>
+
+  <ag-grid-angular class="ag-theme-quartz" style="height: 500px; width: 100%;" [rowData]="rowData"
+    [columnDefs]="colDefs" [class]="themeClass" [gridOptions]="gridOptions" (rowDoubleClicked)="openKundaliPage($event)"
+    [overlayNoRowsTemplate]="noRowsTemplate"></ag-grid-angular>
+
 </div>
-  <ag-grid-angular class="ag-theme-quartz"
-  style="height: 500px;width: 100%;"
-  [rowData]="rowData"
-  [columnDefs]="colDefs"
-  [class]="themeClass"
-  [gridOptions]="gridOptions"
-  (rowDoubleClicked)="openKundaliPage($event)"
-  >
-
-  </ag-grid-angular>
-</div>
-
-
-
