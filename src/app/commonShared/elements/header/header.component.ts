@@ -26,10 +26,10 @@ export class HeaderComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private breakpointObserver: BreakpointObserver
   ) {
-    let rushikul_data= this.cookieService.get('rushikul_data');
+    let rushikul_data = this.cookieService.get('rushikul_data');
     console.log(rushikul_data);
-    if(rushikul_data !=''){
-    let userdata = JSON.parse(this.cookieService.get('rushikul_data') ?? '');
+    if (rushikul_data != '') {
+      let userdata = JSON.parse(this.cookieService.get('rushikul_data') ?? '');
 
       this.role = userdata.role;
       this.username = userdata.name
@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         title: 'Customer',
-        url: '/employee/customer',
+        url: '/employee',
         icon: 'fas fa-tasks',
         active: false,
       },

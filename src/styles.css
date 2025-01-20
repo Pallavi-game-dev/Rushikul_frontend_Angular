@@ -1,18 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'ag-grid-community/styles/ag-grid.css';
-@import 'ag-grid-community/styles/ag-theme-quartz.css';
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-quartz.css";
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  overflow: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-form-field{
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-form-field {
   width: 100%;
 }
 
-.dailog-title{
-
+.dailog-title {
 }
 .dailogHeader {
   display: flex;
@@ -20,7 +24,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
-  border-bottom: 1px solid #ECEEF6;
+  border-bottom: 1px solid #eceef6;
   margin-bottom: 1em;
   padding-bottom: 1em;
   font-size: 16px;
@@ -37,7 +41,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 0px;
   cursor: pointer;
 }
-.dailog_footer{
+.dailog_footer {
   padding: 8px 0;
   display: flex;
   flex-wrap: wrap;
@@ -47,22 +51,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-bottom: -24px;
   justify-content: flex-end;
   gap: 10px;
-  border-top: 1px solid #ECEEF6;
+  border-top: 1px solid #eceef6;
   margin-top: 10px;
 }
-.my-form-field{
+.my-form-field {
   width: 99%;
 }
-.my-form-field-half{
+.my-form-field-half {
   width: 49%;
 }
-.my-grid-form{
+.my-grid-form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-.headerLabel{
+.headerLabel {
   font-size: 20px;
   font-weight: bold;
+}
+.ag-body {
+  min-height: 250px;
 }

@@ -4,17 +4,20 @@ import { AuthGuard } from '../auth/auth.guard';
 import { RoleComponent } from './role.component';
 
 const routes: Routes = [
- {
-  path:'',
-  component:RoleComponent,
-  // canActivate:[],
-  children:[
-    {
-      path:'employee',
-      loadChildren:()=>import('./employee/employee.module').then((m)=>m.EmployeeModule)
-    }
-  ]
- }
+  {
+    path: '',
+    component: RoleComponent,
+    // canActivate:[],
+    children: [
+      {
+        path: '', pathMatch: 'full', redirectTo: '/employee'
+      },
+      {
+        path: 'employee',
+        loadChildren: () => import('./employee/employee.module').then((m) => m.EmployeeModule)
+      }
+    ]
+  }
 
 
 ];

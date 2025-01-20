@@ -13,13 +13,13 @@ const routes: Routes = [
     path: '',
     component: EmployeeComponent,
     children: [
-      { path: 'customer', component: CustomerComponent },
+      { path: '', component: CustomerComponent },
       { path: 'customer/:_id', component: CustomerDetailsComponent },
       { path: 'directors', component: DirectorsComponent },
       { path: 'agents', component: AgentsComponent },
       { path: 'loan', component: LoanComponent },
       { path: 'deposite', component: DepositesComponent },
-      { path: '', redirectTo: 'customer', pathMatch: 'full' },
+
     ],
   },
 ];

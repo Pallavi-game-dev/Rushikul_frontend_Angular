@@ -1,13 +1,23 @@
- /* .ag-theme-quartz {
+/* .ag-theme-quartz {
      --ag-foreground-color: rgb(16, 100, 9);
      --ag-background-color: rgb(241, 255, 245);
      --ag-header-background-color: rgb(228, 250, 235);
      --ag-row-hover-color: rgb(216, 255, 229);
  } */
 
-.customer_header{
+.customer_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+.ag-theme-alpine .no-rows-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #757575;
+  font-size: 16px;
+  font-style: italic;
+  background-color: #f9f9f9;
 }
