@@ -1,0 +1,82 @@
+<mat-card class="aadhar-card">
+  <mat-icon class="editIcon" (click)="isEdit = !isEdit">edit</mat-icon>
+  <div class="aadhar-card-title-group">
+    <div>
+      <img src="../../../../assets/download.png" style="width: 38px" />
+    </div>
+    <div class="aadhar-card-title">
+      <label class="marathi-bharat-sarkar"> भारत सरकार </label>
+      <label class="eng-bharat-sarkar"> GOVERNMENT OF INDIA </label>
+    </div>
+    <div>
+      <img
+        src="../../../../assets/aadhar.png"
+        style="width: 90px; border-radius: 6px"
+      />
+    </div>
+  </div>
+
+  <mat-card-content style="height: 137px;">
+    <div class="addhar-contet">
+      <div>
+        <img src="../../../../assets/aavtar.png" style="width: 90px" />
+      </div>
+      <div>
+        <form class="aadhar-card-form">
+          <table>
+            <tr>
+              <td><label>Name :</label></td>
+              <td *ngIf="isEdit"><input [type]="'text'" [value]="name" /></td>
+              <td *ngIf="!isEdit">
+                <label>{{ name }}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label>DOB :</label></td>
+              <td *ngIf="isEdit"><input [type]="'text'" [value]="dob" /></td>
+              <td *ngIf="!isEdit">
+                <label>{{ dob }}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Mobile : </label></td>
+              <td *ngIf="isEdit">
+                <input [type]="'text'" [value]="mobile_number" />
+              </td>
+              <td *ngIf="!isEdit">
+                <label>{{ mobile_number }}</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Gender :</label></td>
+              <td *ngIf="isEdit">
+                <select name="gender" id="" [value]="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </td>
+
+              <td *ngIf="!isEdit">
+                <label>{{ gender }}</label>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div>
+        <img
+          src="../../../../assets/QRCode.svg"
+          style="width: 90px; border-radius: 6px"
+        />
+      </div>
+    </div>
+    <div class="aadhar-card-number">
+      <label *ngIf="!isEdit">{{ addharnumber }}</label>
+      <input *ngIf="isEdit" [type]="'text'" [value]="addharnumber" class="aadhar-card-number"/>
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+    <div class="aadhar-card-footer">आधार - भारतीय विशिष्ट पहचान प्राधिकरण</div>
+
+  </mat-card-footer>
+</mat-card>

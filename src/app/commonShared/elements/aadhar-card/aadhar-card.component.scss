@@ -1,0 +1,74 @@
+.aadhar-card{
+  display: block;
+  width: 33rem;
+  border: 1px solid #cfcfcf;
+  height: 18rem;
+  box-shadow: 4px 5px 5px #cfcfcf;
+  border-radius: 20px;
+  .aadhar-card-title-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: bolder;
+    .aadhar-card-title{
+      display: flex;
+      gap: 9px;
+      flex-direction: column;
+      align-items: center;
+      width: 73%;
+      .marathi-bharat-sarkar{
+        background-color: orange;
+        width: 100%;
+        text-align: center;
+
+      }
+      .eng-bharat-sarkar{
+        background-color: rgb(49, 228, 49);
+        width: 100%;
+        text-align: center;
+
+      }
+    }
+  }
+  .addhar-contet{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+  .aadhar-card-number{
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .aadhar-card-form{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .form-fields{
+    display: flex;
+    gap: 18px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .aadhar-card-footer{
+    font-size: 23px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px;
+    color: #282828;
+    border-top: 1px solid #aaa9aa;
+  }
+  .editIcon{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
