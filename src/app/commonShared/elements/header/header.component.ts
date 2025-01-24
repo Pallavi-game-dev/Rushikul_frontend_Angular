@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         title: 'Customer',
-        url: '/employee',
+        url: '/employee/customer',
         icon: 'fas fa-tasks',
         active: false,
       },

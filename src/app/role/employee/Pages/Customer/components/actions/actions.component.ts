@@ -53,7 +53,7 @@ export class ActionsComponent implements OnInit {
       if (result.isConfirmed) {
         console.log(this.params);
 
-        this.apiService.deactivateCustomer(this.params.customer_id).subscribe((res: any) => {
+        this.apiService.deactivateCustomer(this.params.data.customer_id).subscribe((res: any) => {
         })
       }
     });

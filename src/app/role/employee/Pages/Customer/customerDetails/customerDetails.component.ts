@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/API/api.service';
 
 @Component({
   selector: 'app-customerDetails',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customerDetails.component.scss']
 })
 export class CustomerDetailsComponent implements OnInit {
-
-  constructor() { }
+  queryParams: any;
+  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
   ngOnInit() {
+    this.route.params.subscribe((data) => {
+      console.log(data);
+      this.queryParams = data
+    })
   }
+
+  getCustomerDetails() {
+    
+
+  }
+
 
 }

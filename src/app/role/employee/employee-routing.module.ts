@@ -13,8 +13,8 @@ const routes: Routes = [
     path: '',
     component: EmployeeComponent,
     children: [
-      { path: '', component: CustomerComponent },
-      { path: 'customer/:_id', component: CustomerDetailsComponent },
+      { path: 'customer', component: CustomerComponent },
+      { path: 'customer/:customer_id', component: CustomerDetailsComponent },
       { path: 'directors', component: DirectorsComponent },
       { path: 'agents', component: AgentsComponent },
       { path: 'loan', component: LoanComponent },

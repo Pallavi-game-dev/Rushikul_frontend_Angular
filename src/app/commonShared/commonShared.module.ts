@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectComponent } from './elements/select/select.component';
 import { SmallCardComponent } from './elements/small-card/small-card.component';
 import { AadharCardComponent } from './elements/aadhar-card/aadhar-card.component';
+import { SearchboxComponent } from './searchbox/searchbox.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,15 +27,17 @@ import { AadharCardComponent } from './elements/aadhar-card/aadhar-card.componen
     HeaderComponent,
     SelectComponent,
     SmallCardComponent,
-    AadharCardComponent
+    AadharCardComponent,
+    SearchboxComponent
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     ButtonComponent,
     SelectComponent,
     SmallCardComponent,
     AadharCardComponent,
-    AgGridModule
+    AgGridModule,
+    SearchboxComponent
   ]
 })
 export class CommonSharedModule { }

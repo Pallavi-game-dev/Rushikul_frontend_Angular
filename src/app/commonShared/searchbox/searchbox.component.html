@@ -1,0 +1,23 @@
+<div class="searchInputCommonInput">
+    <!-- <mat-form-field appearance="outline" style="width: 100%">
+      <mat-icon matPrefix class="search_icon">search</mat-icon>
+      <input
+        matInput
+        placeholder="{{placeholder}}"
+        ngModel
+        type="text"
+        autocomplete="off"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchChange($event)"
+        name="search"
+        #search_bar
+      />
+    </mat-form-field> -->
+  
+    <div class="p-inputgroup mysearchboxx">
+      <span class="p-inputgroup-addon"> <mat-icon matPrefix class="search_icon">search</mat-icon></span>
+      <input type="text" pInputText placeholder="{{placeholder}}" autocomplete="off webauthn"
+        [(ngModel)]="searchText" (ngModelChange)="onSearchChange($event)" name="search" #search_bar>
+    </div>
+  </div>
+  

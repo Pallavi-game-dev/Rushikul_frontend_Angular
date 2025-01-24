@@ -86,6 +86,11 @@
               {{ item }}
             </mat-option>
           </mat-select>
+          <mat-error
+            *ngIf=" customerForm.controls['gender'].invalid &&(customerForm.controls['gender'].dirty || customerForm.controls['gender'].touched)">
+            <span *ngIf="customerForm.controls['gender'].hasError('required')">Gender is
+              required.</span>
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="my-form-field-half">
@@ -95,6 +100,11 @@
               {{ item.branch_name }}
             </mat-option>
           </mat-select>
+          <mat-error
+            *ngIf=" customerForm.controls['branch'].invalid &&(customerForm.controls['branch'].dirty || customerForm.controls['branch'].touched)">
+            <span *ngIf="customerForm.controls['branch'].hasError('required')">Branch is
+              required.</span>
+          </mat-error>
         </mat-form-field>
 
       </div>

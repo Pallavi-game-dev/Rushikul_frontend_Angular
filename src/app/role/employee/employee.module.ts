@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
 import { CustomerDetailsComponent } from './Pages/Customer/customerDetails/customerDetails.component';
 import { ActionsComponent } from './Pages/Customer/components/actions/actions.component';
+import { SearchboxComponent } from 'src/app/commonShared/searchbox/searchbox.component';
 
 
 

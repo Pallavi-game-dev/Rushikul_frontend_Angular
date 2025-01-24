@@ -43,4 +43,8 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}update_customer`, body)
   }
 
+  getCustomerDetails(body: any) {
+    return this.http.post(`${this.baseUrl}update_customer`, body)
+  }
+
 }

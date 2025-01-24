@@ -1,0 +1,36 @@
+::ng-deep {
+  .searchInputCommonInput {
+    .mat-form-field-appearance-outline .mat-form-field-prefix {
+      top: 0.5em !important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding: 4px 0px 12px 6px;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-end {
+      border-radius: 0 28px 28px 0 !important;
+      background-color: #ffffff;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-start {
+      border-radius: 28px 0 0 28px !important;
+      min-width: 28px !important;
+      background-color: #ffffff;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      margin: 0.25em 0;
+    }
+    .mat-form-field-prefix .mat-icon,
+    .mat-form-field-suffix .mat-icon {
+      opacity: 0.5;
+    }
+  }
+
+  .p-inputgroup {
+    height: 2.2rem !important;
+  }
+}
+.mysearchboxx {
+  margin: 0.25rem;
+}

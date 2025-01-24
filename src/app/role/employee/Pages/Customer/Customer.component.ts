@@ -15,23 +15,26 @@ import { ActionsComponent } from './components/actions/actions.component';
 export class CustomerComponent implements OnInit {
   public themeClass: string = "ag-theme-quartz";
   noRowsTemplate = `<img src=".../../../../../assets/empty_overlay.svg"/>`;
-  rowData: any = [{
-    customer_first_name: "NO",
-    user_id: 6,
-    customer_last_name: "NO",
-    customer_email: "NO",
-    mobile_number: "NO",
-    gender: "NO",
-    addharcard_number: "NO",
-    pancard_number: "NO",
-    address: "NO",
-    status: "NO",
-    action: "NO",
-  }];
+  rowData: any = [
+    {
+      "customer_first_name": "Yash",
+      "customer_last_name": "Choudhary",
+      "customer_email": "yash@gmail.com",
+      "mobile_number": "9137112099",
+      "gender": "MALE",
+      "address": "saS",
+      "addharcard_number": "765432456780",
+      "pancard_number": "CPRPC0959L",
+      "enabled": true,
+      "branch_id": 2,
+      "customer_id": 2
+    },
+  ];
   gridOptions: GridOptions = {
-    domLayout: 'autoHeight',
     animateRows: true,
-    pagination: false,
+    pagination: true,
+    paginationPageSize: 10,
+    paginationPageSizeSelector: false,
     defaultColDef: {
       flex: 1,
       wrapText: true,
@@ -42,8 +45,13 @@ export class CustomerComponent implements OnInit {
     },
   }
   colDefs: ColDef[] = [
-    { field: "customer_first_name", headerName: 'First Name' },
-    { field: "customer_last_name", headerName: 'Last Name' },
+    {
+      field: "customer_first_name", headerName: 'First Name', filter: 'agTextColumnFilter',
+      filterParams: {
+        buttons: ['apply', 'reset'],
+      },
+    },
+    { field: "customer_last_name", headerName: 'Last Name', filter: 'agTextColumnFilter' },
     { field: "customer_email", headerName: 'Email Id' },
     { field: "mobile_number", headerName: 'Mobile Number' },
     { field: "gender", headerName: 'Gender' },
@@ -64,7 +72,7 @@ export class CustomerComponent implements OnInit {
       headerName: "Action",
       cellRenderer: ActionsComponent,
       cellRendererParams: {
-        OnUpdated: this.onUpdated.bind(this) // Pass the callback function
+        OnUpdated: this.onUpdated.bind(this)
       }
     },
   ];
@@ -78,15 +86,14 @@ export class CustomerComponent implements OnInit {
   }
 
   onUpdated() {
-    console.log("Data updated, refresh the grid or perform other actions.");
-    this.getCustomerList(); // Or any logic specific to your use case
+    this.getCustomerList();
   }
   getCustomerList() {
-    this.apiService.getCustomerList({}).subscribe((res: any) => {
-      if (res.status == 'success') {
-        this.rowData = res.data;
-      }
-    })
+    // this.apiService.getCustomerList({}).subscribe((res: any) => {
+    //   if (res.status == 'success') {
+    //     this.rowData = res.data;
+    //   }
+    // })
   }
 
 
@@ -105,6 +112,12 @@ export class CustomerComponent implements OnInit {
     })
   }
   openKundaliPage(event: any) {
-    this.router.navigate(['employee/customer/' + event.data._id]);
+    console.log(event);
+
+    this.router.navigate(['employee/customer/' + event.data.customer_id]);
+  }
+
+  onQuickFilterChanged(event: any) {
+
   }
 }
