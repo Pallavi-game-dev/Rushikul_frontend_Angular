@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { first } from 'rxjs';
 import { CustomerService } from 'src/app/role/services/customer.service';
 import { ApiService } from 'src/app/services/API/api.service';
 
@@ -32,17 +33,17 @@ export class AddCustomerComponent implements OnInit {
     this.getBranchList()
 
     this.customerForm = this.fb.group({
-      customer_first_name: [null, [Validators.required]],
-      customer_last_name: [null, [Validators.required]],
-      customer_email: [null, [Validators.required, Validators.email]],
+      first_name: [null, [Validators.required]],
+      last_name: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
       mobile_number: [null, [Validators.required, Validators.maxLength(10), Validators.minLength(10),
       ]],
       gender: [null, [Validators.required]],
-      addharcard_number: [null, [Validators.required, Validators.pattern(/^\d{12}$/)]],
-      pancard_number: [null, [Validators.required, Validators.pattern(/^[A-Z]{5}\d{4}[A-Z]$/),
+      aadharcard: [null, [Validators.required, Validators.pattern(/^\d{12}$/)]],
+      pancard: [null, [Validators.required, Validators.pattern(/^[A-Z]{5}\d{4}[A-Z]$/),
       ]],
       address: [null, [Validators.required]],
-      branch: [null, [Validators.required]],
+      branch_id: [null, [Validators.required]],
       customer_id: [null,],
     });
 
@@ -51,7 +52,11 @@ export class AddCustomerComponent implements OnInit {
 
     this.customerForm.patchValue({
       ...this.customerData,
-      branch: this.customerData.branch_id
+      first_name: this.customerData?.customer_first_name,
+      last_name: this.customerData?.customer_last_name,
+      email: this.customerData?.customer_email,
+      aadharcard: this.customerData?.addharcard_number,
+      pancard: this.customerData?.pancard_number,
     }
     )
 
@@ -75,26 +80,13 @@ export class AddCustomerComponent implements OnInit {
 
   onSubmitForm() {
     if (this.customerForm.valid) {
-
-      let obj = {
-        ...this.customerForm.value,
-        customer_id: this.customerForm.value.customer_id,
-        first_name: this.customerForm.value.customer_first_name,
-        last_name: this.customerForm.value.customer_last_name,
-        email: this.customerForm.value.customer_email,
-        phone: this.customerForm.value.mobile_number,
-        aadharcard: this.customerForm.value.addharcard_number,
-        pancard: this.customerForm.value.pancard_number,
-        branch_id: this.customerForm.value.branch
-      }
-
       if (this.customerForm.value?.customer_id) {
 
-        this.apiService.updateCustomer(obj).subscribe((res: any) => {
+        this.apiService.updateCustomer(this.customerForm.value).subscribe((res: any) => {
           this.matDialogRef.close()
         })
       } else {
-        this.apiService.addNewUser(obj).subscribe((res: any) => {
+        this.apiService.createCustomer(this.customerForm.value).subscribe((res: any) => {
           this.matDialogRef.close()
         })
       }

@@ -5,21 +5,23 @@
      --ag-row-hover-color: rgb(216, 255, 229);
  } */
 
+ @import 'src/app/commonShared/constants/color.scss';
 .customer_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .ag-theme-alpine .no-rows-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #757575;
+  color: $dark_grey;
   font-size: 16px;
   font-style: italic;
-  background-color: #f9f9f9;
+  background-color: $white_grey;
 }
 
 .btnContainer {
@@ -29,11 +31,29 @@
 }
 
 .mat-button-toggle-checked {
-  color: #fff;
-  background-color: #035e96;
+  color: $white;
+  background-color: $primary;
 }
-::ng-deep
-  .mat-button-toggle-appearance-standard
-  .mat-button-toggle-label-content {
+
+::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
   line-height: 32px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin: 20px 0;
+
+  .searchbox {
+    width: 50%;
+  }
+  .btnContainer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+  }
 }

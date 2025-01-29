@@ -3,21 +3,21 @@
     <label class="headerLabel">
       Customers
     </label>
-    <div class="top-container">
-      <div class="searchbox">
-        <app-searchbox></app-searchbox>
-      </div>
-      <div class="btnContainer">
-        <mat-button-toggle-group value="all">
-          <mat-button-toggle value="all">All</mat-button-toggle>
-          <mat-button-toggle value="active">Active</mat-button-toggle>
-          <mat-button-toggle value="inactive">Inactive</mat-button-toggle>
-        </mat-button-toggle-group>
-        <app-button [buttonClass]="'primary'" [ButtonText]="'Add New Customer'"
-          (clicked)="onAddNewCustomer()"></app-button>
-      </div>
-    </div>
+  </div>
 
+  <div class="top-container">
+    <div class="searchbox">
+      <app-searchbox (onSearch)="searchCustomer($event)" [searchText]="finder_string" placeholder="Search Customer" ></app-searchbox>
+    </div>
+    <div class="btnContainer">
+      <mat-button-toggle-group [value]="customer_type" (change)="onStatusChange($event)" >
+        <mat-button-toggle value="all">All</mat-button-toggle>
+        <mat-button-toggle value="active">Active</mat-button-toggle>
+        <mat-button-toggle value="inactive">Inactive</mat-button-toggle>
+      </mat-button-toggle-group>
+      <app-button [buttonClass]="'primary'" [ButtonText]="'Add New Customer'"
+        (clicked)="onAddNewCustomer()"></app-button>
+    </div>
   </div>
 
   <ag-grid-angular class="ag-theme-quartz" style="height: 500px; width: 100%;" [rowData]="rowData"

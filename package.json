@@ -11,7 +11,7 @@
   "private": true,
   "dependencies": {
     "@ag-grid-community/angular": "^31.3.2",
-    "@angular/animations": "^14.2.0",
+    "@angular/animations": "^14.3.0",
     "@angular/cdk": "^13.0.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
@@ -24,6 +24,8 @@
     "ag-grid-angular": "^31.3.2",
     "ag-grid-community": "^31.3.2",
     "ngx-cookie-service": "^14.0.0",
+    "primeicons": "^5.0.0",
+    "primeng": "^14.0.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.7.12",
     "tslib": "^2.3.0",

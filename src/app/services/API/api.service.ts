@@ -36,7 +36,11 @@ export class ApiService {
   }
 
   deactivateCustomer(customer_id: number) {
-    return this.http.delete(`${this.baseUrl}delete_customer?customer_id=${customer_id}`)
+    return this.http.post(`${this.baseUrl}disabled_customer`, { customer_id })
+  }
+
+  reactivateCustomer(customer_id: number) {
+    return this.http.post(`${this.baseUrl}enabled_customer`, { customer_id })
   }
 
   updateCustomer(body: any) {
@@ -46,5 +50,6 @@ export class ApiService {
   getCustomerDetails(body: any) {
     return this.http.post(`${this.baseUrl}update_customer`, body)
   }
+
 
 }

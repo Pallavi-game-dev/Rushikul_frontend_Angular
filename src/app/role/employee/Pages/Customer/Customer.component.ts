@@ -10,10 +10,12 @@ import { ActionsComponent } from './components/actions/actions.component';
 @Component({
   selector: 'app-Customer',
   templateUrl: './Customer.component.html',
-  styleUrls: ['./Customer.component.css']
+  styleUrls: ['./Customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
   public themeClass: string = "ag-theme-quartz";
+  customer_type:string='all';
+  finder_string:string='';
   noRowsTemplate = `<img src=".../../../../../assets/empty_overlay.svg"/>`;
   rowData: any = [
     {
@@ -30,6 +32,7 @@ export class CustomerComponent implements OnInit {
       "customer_id": 2
     },
   ];
+  gridApi: any;
   gridOptions: GridOptions = {
     animateRows: true,
     pagination: true,
@@ -50,14 +53,49 @@ export class CustomerComponent implements OnInit {
       filterParams: {
         buttons: ['apply', 'reset'],
       },
+
     },
-    { field: "customer_last_name", headerName: 'Last Name', filter: 'agTextColumnFilter' },
-    { field: "customer_email", headerName: 'Email Id' },
-    { field: "mobile_number", headerName: 'Mobile Number' },
-    { field: "gender", headerName: 'Gender' },
-    { field: "addharcard_number", headerName: 'Aadhar Number' },
-    { field: "pancard_number", headerName: 'Pancard' },
-    { field: "address", headerName: 'Address' },
+    { field: "customer_last_name", headerName: 'Last Name', filter: 'agTextColumnFilter',
+      filterParams:{
+        buttons: ['apply', 'reset'],
+      }
+    },
+    { field: "customer_email", headerName: 'Email Id',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+    },
+    { field: "mobile_number", headerName: 'Mobile Number',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+     },
+    { field: "gender", headerName: 'Gender',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+     },
+    { field: "addharcard_number", headerName: 'Aadhar Number',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+     },
+    { field: "pancard_number", headerName: 'Pancard',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+    },
+    { field: "address", headerName: 'Address',
+    filter: 'agTextColumnFilter',
+    filterParams:{
+      buttons: ['apply', 'reset'],
+    }
+    },
     {
       field: "enabled", headerName: 'Status',
       cellRenderer: (params: any) => {
@@ -78,7 +116,7 @@ export class CustomerComponent implements OnInit {
   ];
   constructor(private apiService: ApiService,
     private router: Router,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -88,12 +126,23 @@ export class CustomerComponent implements OnInit {
   onUpdated() {
     this.getCustomerList();
   }
-  getCustomerList() {
-    // this.apiService.getCustomerList({}).subscribe((res: any) => {
-    //   if (res.status == 'success') {
-    //     this.rowData = res.data;
-    //   }
-    // })
+  getCustomerList(body:any={}) {
+    console.log(this.gridApi);
+    
+    this.apiService.getCustomerList(body).subscribe((res: any) => {
+      if (res.status == 'success') {
+        this.rowData = res.data;
+      }
+    })
+  }
+
+  onStatusChange(event: any) {
+    this.getCustomerList({ customer_type: [event.value] ,finder_string:this.finder_string});  
+  }
+
+  searchCustomer(value: any) {  
+    this.finder_string=value;
+    this.getCustomerList({ finder_string: value, customer_type: [this.customer_type] });
   }
 
 

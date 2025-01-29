@@ -1,6 +1,7 @@
+
 ::ng-deep {
   .searchInputCommonInput {
-    .mat-form-field-appearance-outline .mat-form-field-prefix {
+    .mat-form-field-appearance-outline .mat-form-field-prefix{
       top: 0.5em !important;
     }
     .mat-form-field-appearance-outline .mat-form-field-infix {
@@ -21,16 +22,22 @@
     .mat-form-field-appearance-outline .mat-form-field-wrapper {
       margin: 0.25em 0;
     }
-    .mat-form-field-prefix .mat-icon,
-    .mat-form-field-suffix .mat-icon {
+    .mat-form-field-prefix .mat-icon, .mat-form-field-suffix .mat-icon {
       opacity: 0.5;
-    }
   }
 
-  .p-inputgroup {
+
+  }
+
+
+  .p-inputgroup{
     height: 2.2rem !important;
   }
 }
-.mysearchboxx {
-  margin: 0.25rem;
+.mysearchboxx{
+margin: 0.25rem;
+}
+
+.p-inputtext{
+  border-radius: 0 6px 6px 0;
 }

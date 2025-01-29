@@ -10,10 +10,10 @@
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
           <mat-label>First Name</mat-label>
-          <input matInput type="text" formControlName="customer_first_name" placeholder="First Name">
+          <input matInput type="text" formControlName="first_name" placeholder="First Name">
           <mat-error
-            *ngIf=" customerForm.controls['customer_first_name'].invalid &&(customerForm.controls['customer_first_name'].dirty || customerForm.controls['customer_first_name'].touched)">
-            <span *ngIf="customerForm.controls['customer_first_name'].hasError('required')">First Name is
+            *ngIf=" customerForm.controls['first_name'].invalid &&(customerForm.controls['first_name'].dirty || customerForm.controls['first_name'].touched)">
+            <span *ngIf="customerForm.controls['first_name'].hasError('required')">First Name is
               required.</span>
           </mat-error>
         </mat-form-field>
@@ -21,21 +21,21 @@
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
           <mat-label>Last Name</mat-label>
-          <input matInput type="text" formControlName="customer_last_name" placeholder="Last Name">
+          <input matInput type="text" formControlName="last_name" placeholder="Last Name">
           <mat-error
-            *ngIf=" customerForm.controls['customer_last_name'].invalid &&(customerForm.controls['customer_last_name'].dirty || customerForm.controls['customer_last_name'].touched)">
-            <span *ngIf="customerForm.controls['customer_last_name'].hasError('required')">Last Name is required.</span>
+            *ngIf=" customerForm.controls['last_name'].invalid &&(customerForm.controls['last_name'].dirty || customerForm.controls['last_name'].touched)">
+            <span *ngIf="customerForm.controls['last_name'].hasError('required')">Last Name is required.</span>
           </mat-error>
         </mat-form-field>
       </div>
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
           <mat-label>Email Id</mat-label>
-          <input matInput type="text" formControlName="customer_email" placeholder="Last Name">
+          <input matInput type="text" formControlName="email" placeholder="Email Id">
           <mat-error
-            *ngIf=" customerForm.controls['customer_email'].invalid &&(customerForm.controls['customer_email'].dirty || customerForm.controls['customer_email'].touched)">
-            <span *ngIf="customerForm.controls['customer_email'].hasError('required')">Email Id is required.</span>
-            <span *ngIf="customerForm.controls['customer_email'].hasError('customer_email')">Invalid Email Id.</span>
+            *ngIf=" customerForm.controls['email'].invalid &&(customerForm.controls['email'].dirty || customerForm.controls['email'].touched)">
+            <span *ngIf="customerForm.controls['email'].hasError('required')">Email Id is required.</span>
+            <span *ngIf="customerForm.controls['email'].hasError('email')">Invalid Email Id.</span>
           </mat-error>
         </mat-form-field>
       </div>
@@ -46,8 +46,7 @@
           <mat-error
             *ngIf=" customerForm.controls['mobile_number'].invalid &&(customerForm.controls['mobile_number'].dirty || customerForm.controls['mobile_number'].touched)">
             <span *ngIf="customerForm.controls['mobile_number'].hasError('required')">Mobile number is required.</span>
-            <span *ngIf="customerForm.controls['mobile_number'].hasError('maxlength')">Mobile number cannot be 10
-              digits.</span>
+            <span *ngIf="customerForm.controls['mobile_number'].hasError('maxlength')">Mobile number should be 10 digits</span>
             <span *ngIf="customerForm.controls['mobile_number'].hasError('minlength')">Mobile number should be 10
               digits.</span>
           </mat-error>
@@ -56,12 +55,12 @@
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
           <mat-label>Addharcard Number</mat-label>
-          <input matInput type="text" formControlName="addharcard_number" placeholder="Addharcard Number">
+          <input matInput type="text" formControlName="aadharcard" placeholder="Addharcard Number">
           <mat-error
-            *ngIf=" customerForm.controls['addharcard_number'].invalid &&(customerForm.controls['addharcard_number'].dirty || customerForm.controls['addharcard_number'].touched)">
-            <span *ngIf="customerForm.controls['addharcard_number'].hasError('required')">Addharcard Number
+            *ngIf=" customerForm.controls['aadharcard'].invalid &&(customerForm.controls['aadharcard'].dirty || customerForm.controls['aadharcard'].touched)">
+            <span *ngIf="customerForm.controls['aadharcard'].hasError('required')">Addharcard Number
               required.</span>
-            <span *ngIf="customerForm.controls['addharcard_number'].hasError('pattern')">Addharcard Number length should
+            <span *ngIf="customerForm.controls['aadharcard'].hasError('pattern')">Addharcard Number length should
               be
               12.</span>
           </mat-error>
@@ -70,12 +69,12 @@
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
           <mat-label>Pancard Number</mat-label>
-          <input matInput type="text" formControlName="pancard_number" placeholder="Pancard Number">
+          <input matInput type="text" formControlName="pancard" placeholder="Pancard Number">
           <mat-error
-            *ngIf=" customerForm.controls['pancard_number'].invalid &&(customerForm.controls['pancard_number'].dirty || customerForm.controls['pancard_number'].touched)">
-            <span *ngIf="customerForm.controls['pancard_number'].hasError('required')">Pancard Number is
+            *ngIf=" customerForm.controls['pancard'].invalid &&(customerForm.controls['pancard'].dirty || customerForm.controls['pancard'].touched)">
+            <span *ngIf="customerForm.controls['pancard'].hasError('required')">Pancard Number is
               required.</span>
-            <span *ngIf="customerForm.controls['pancard_number'].hasError('pattern')">Pancard format is invalid.</span>
+            <span *ngIf="customerForm.controls['pancard'].hasError('pattern')">Pancard format is invalid.</span>
           </mat-error>
         </mat-form-field>
       </div>
@@ -95,14 +94,14 @@
       </div>
       <div class="my-form-field-half">
         <mat-form-field appearance="outline">
-          <mat-select placeholder="Select branch" formControlName="branch">
+          <mat-select placeholder="Select branch" formControlName="branch_id">
             <mat-option *ngFor="let item of branchList" [value]="item.branch_id">
               {{ item.branch_name }}
             </mat-option>
           </mat-select>
           <mat-error
-            *ngIf=" customerForm.controls['branch'].invalid &&(customerForm.controls['branch'].dirty || customerForm.controls['branch'].touched)">
-            <span *ngIf="customerForm.controls['branch'].hasError('required')">Branch is
+            *ngIf=" customerForm.controls['branch_id'].invalid &&(customerForm.controls['branch_id'].dirty || customerForm.controls['branch_id'].touched)">
+            <span *ngIf="customerForm.controls['branch_id'].hasError('required')">Branch is
               required.</span>
           </mat-error>
         </mat-form-field>

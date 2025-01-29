@@ -10,7 +10,7 @@ const routes: Routes = [
     // canActivate:[],
     children: [
       {
-        path: '', pathMatch: 'full', redirectTo: '/employee'
+        path: '', pathMatch: 'full', redirectTo: 'employee'
       },
       {
         path: 'employee',

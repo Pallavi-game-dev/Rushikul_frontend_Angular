@@ -16,6 +16,8 @@ export class ActionsComponent implements OnInit {
 
   agInit(params: any): void {
     this.params = params;
+    console.log(this.params);
+    
   }
 
   constructor(private matDialog: MatDialog, public apiService: ApiService) { }
@@ -54,6 +56,28 @@ export class ActionsComponent implements OnInit {
         console.log(this.params);
 
         this.apiService.deactivateCustomer(this.params.data.customer_id).subscribe((res: any) => {
+          this.params.OnUpdated();
+        })
+      }
+    });
+
+  }
+
+  reactivate() {
+    Swal.fire({
+      title: "Are you sure want to reactivate this customer?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: "Reactivate",
+      confirmButtonColor: 'green',
+      cancelButtonColor: '#035e96',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        console.log(this.params);
+
+        this.apiService.reactivateCustomer(this.params.data.customer_id).subscribe((res: any) => {
+          this.params.OnUpdated();
         })
       }
     });

@@ -9,6 +9,7 @@ import { RoleModule } from './role/role.module';
 import { CommonSharedModule } from './commonShared/commonShared.module';
 import { AuthInterceptor } from 'src/http-interceptors/auth-interceptor';
 import { ApiService } from './services/API/api.service';
+import { MyprimengModule } from './myprimeng/myprimeng.module';
 
 
 
@@ -21,8 +22,7 @@ import { ApiService } from './services/API/api.service';
     AppRoutingModule,
     AuthModule,
     RoleModule,
-
-
+    MyprimengModule,
     BrowserAnimationsModule,
     CommonSharedModule
 

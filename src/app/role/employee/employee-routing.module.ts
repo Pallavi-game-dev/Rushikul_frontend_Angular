@@ -9,6 +9,7 @@ import { DepositesComponent } from './Pages/Deposites/Deposites.component';
 import { CustomerDetailsComponent } from './Pages/Customer/customerDetails/customerDetails.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'customer', pathMatch: 'full' },
   {
     path: '',
     component: EmployeeComponent,
@@ -19,7 +20,6 @@ const routes: Routes = [
       { path: 'agents', component: AgentsComponent },
       { path: 'loan', component: LoanComponent },
       { path: 'deposite', component: DepositesComponent },
-
     ],
   },
 ];
