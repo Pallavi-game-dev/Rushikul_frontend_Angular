@@ -1,4 +1,4 @@
-<mat-expansion-panel>
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="panelOpenState">
   <mat-expansion-panel-header>
     <mat-panel-title class="Kunadali_title"> Pallavi Patil </mat-panel-title>
   </mat-expansion-panel-header>
@@ -32,6 +32,7 @@
       <span>Female</span>
     </div>
   </div>
+  <app-aadhar-card></app-aadhar-card>
 </mat-expansion-panel>
 <section class="details_container">
   <app-small-card

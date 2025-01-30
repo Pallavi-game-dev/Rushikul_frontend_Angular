@@ -1,8 +1,10 @@
+@import '../../constants/fontSize.scss';
+@import '../../constants/color.scss';
 .aadhar-card{
   display: block;
   width: 33rem;
   border: 1px solid #cfcfcf;
-  height: 18rem;
+  // height: 18rem;
   box-shadow: 4px 5px 5px #cfcfcf;
   border-radius: 20px;
   .aadhar-card-title-group{
@@ -67,8 +69,20 @@
   }
   .editIcon{
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
+  }
+
+}
+::ng-deep{
+.aadhar-number{
+  input{
+    border: none !important;
+    font-size:$large ;
+    text-align: center;
+    font-weight: bold;
+    color: $black;
   }
 }
 
+}

@@ -12,6 +12,7 @@ import { SelectComponent } from './elements/select/select.component';
 import { SmallCardComponent } from './elements/small-card/small-card.component';
 import { AadharCardComponent } from './elements/aadhar-card/aadhar-card.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
+import { MyprimengModule } from '../myprimeng/myprimeng.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
     RouterModule,
     AgGridModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MyprimengModule
 
   ],
   declarations: [

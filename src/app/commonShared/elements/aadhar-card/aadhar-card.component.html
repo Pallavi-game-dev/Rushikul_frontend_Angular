@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <mat-card-content style="height: 137px;">
+  <mat-card-content>
     <div class="addhar-contet">
       <div>
         <img src="../../../../assets/aavtar.png" style="width: 90px" />
@@ -51,8 +51,7 @@
               <td><label>Gender :</label></td>
               <td *ngIf="isEdit">
                 <select name="gender" id="" [value]="gender">
-                  <option>Male</option>
-                  <option>Female</option>
+                  <option *ngFor="let g of genders" >{{g}}</option>
                 </select>
               </td>
 
@@ -70,13 +69,13 @@
         />
       </div>
     </div>
-    <div class="aadhar-card-number">
-      <label *ngIf="!isEdit">{{ addharnumber }}</label>
-      <input *ngIf="isEdit" [type]="'text'" [value]="addharnumber" class="aadhar-card-number"/>
+    <div class="aadhar-card-number" >
+      <!-- <label *ngIf="!isEdit">{{ addharnumber }}</label> -->
+      <!-- <input *ngIf="isEdit" [type]="'text'" [value]="addharnumber" class="aadhar-card-number"/> -->
+      <p-inputMask [disabled]="!isEdit" mask="9999 9999 9999 9999" [(ngModel)]="addharnumber" class="aadhar-number"  placeholder="9999 9999 9999 9999"></p-inputMask>
     </div>
   </mat-card-content>
   <mat-card-footer>
     <div class="aadhar-card-footer">आधार - भारतीय विशिष्ट पहचान प्राधिकरण</div>
-
   </mat-card-footer>
 </mat-card>
