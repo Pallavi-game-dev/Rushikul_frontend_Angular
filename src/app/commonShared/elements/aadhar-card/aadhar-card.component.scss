@@ -2,7 +2,7 @@
 @import '../../constants/color.scss';
 .aadhar-card{
   display: block;
-  width: 33rem;
+  width: 28rem;
   border: 1px solid #cfcfcf;
   // height: 18rem;
   box-shadow: 4px 5px 5px #cfcfcf;
@@ -38,7 +38,7 @@
   .addhar-contet{
     display: flex;
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 10px;
     justify-content: space-between;
   }
   .aadhar-card-number{
@@ -60,8 +60,8 @@
     align-items: center;
   }
   .aadhar-card-footer{
-    font-size: 23px;
-    font-weight: 500;
+    font-size:$xlarge ;
+    font-weight: bold;
     text-align: center;
     padding: 15px;
     color: #282828;
@@ -70,7 +70,7 @@
   .editIcon{
     position: absolute;
     right: 5px;
-    bottom: 5px;
+    top: 5px;
   }
 
 }
