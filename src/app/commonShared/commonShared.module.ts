@@ -13,6 +13,7 @@ import { SmallCardComponent } from './elements/small-card/small-card.component';
 import { AadharCardComponent } from './elements/aadhar-card/aadhar-card.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
 import { MyprimengModule } from '../myprimeng/myprimeng.module';
+import { PanCardComponent } from './elements/pan-card/pan-card.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -30,7 +31,8 @@ import { MyprimengModule } from '../myprimeng/myprimeng.module';
     SelectComponent,
     SmallCardComponent,
     AadharCardComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    PanCardComponent
   ],
   exports: [
     HeaderComponent,
@@ -39,7 +41,8 @@ import { MyprimengModule } from '../myprimeng/myprimeng.module';
     SmallCardComponent,
     AadharCardComponent,
     AgGridModule,
-    SearchboxComponent
+    SearchboxComponent,
+    PanCardComponent
   ]
 })
 export class CommonSharedModule { }

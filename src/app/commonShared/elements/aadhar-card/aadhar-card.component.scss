@@ -2,10 +2,11 @@
 @import '../../constants/color.scss';
 .aadhar-card{
   display: block;
-  width: 28rem;
+  width: 500px;
+  height: 300px;
   border: 1px solid #cfcfcf;
   // height: 18rem;
-  box-shadow: 4px 5px 5px #cfcfcf;
+  box-shadow: 4px 5px 5px $white_grey;
   border-radius: 20px;
   .aadhar-card-title-group{
     display: flex;
@@ -69,19 +70,32 @@
   }
   .editIcon{
     position: absolute;
-    right: 5px;
-    top: 5px;
+    color: $white;
+    background-color: $primary;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    font-size: $xxlarge;
+    right: -15px;
+    top: -15px;
   }
 
 }
 ::ng-deep{
 .aadhar-number{
   input{
-    border: none !important;
     font-size:$large ;
     text-align: center;
     font-weight: bold;
-    color: $black;
+    color: $darkblack;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  input:disabled{
+    border: none;
   }
 }
 

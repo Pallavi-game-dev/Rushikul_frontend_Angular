@@ -1,6 +1,7 @@
 <mat-card class="aadhar-card">
-  <mat-icon class="editIcon" (click)="isEdit = !isEdit">edit</mat-icon>
-  <div class="aadhar-card-title-group">
+  <mat-icon class="editIcon" title="Edit" *ngIf="!isEdit" (click)="isEdit = !isEdit">edit</mat-icon>
+  <button mat-icon-button class="editIcon" *ngIf="isEdit" > <mat-icon title="Save" [ngStyle]="" (click)="saveDetails()">save</mat-icon></button>
+<div class="aadhar-card-title-group">
     <div>
       <img src="../../../../assets/download.png" style="width: 38px" />
     </div>
@@ -26,36 +27,37 @@
           <table>
             <tr>
               <td><label>Name :</label></td>
-              <td *ngIf="isEdit"><input [type]="'text'" [value]="name" /></td>
-              <td *ngIf="!isEdit">
+              <!-- <td *ngIf="isEdit">
+                <input [type]="'text'" [value]="name" /></td> -->
+              <td>
                 <label>{{ name }}</label>
               </td>
             </tr>
             <tr>
               <td><label>DOB :</label></td>
-              <td *ngIf="isEdit"><input [type]="'text'" [value]="dob" /></td>
-              <td *ngIf="!isEdit">
-                <label>{{ dob }}</label>
+              <td *ngIf="isEdit"><input type="date" [max]="todays_date" [value]="dob" /></td>
+              <td>
+                <label *ngIf="!isEdit">{{ dob }}</label>
               </td>
             </tr>
             <tr>
-              <td><label>Mobile : </label></td>
-              <td *ngIf="isEdit">
-                <input [type]="'text'" [value]="mobile_number" />
-              </td>
-              <td *ngIf="!isEdit">
+              <td><label>Mobile:</label></td>
+              <!-- <td *ngIf="isEdit">
+                <input [type]="'text'" [value]="mobile_number" pattern="^\d+$" minlength="10" maxlength="10" />
+              </td> -->
+              <td>
                 <label>{{ mobile_number }}</label>
               </td>
             </tr>
             <tr>
-              <td><label>Gender :</label></td>
-              <td *ngIf="isEdit">
+              <td><label>Gender:</label></td>
+              <!-- <td *ngIf="isEdit">
                 <select name="gender" id="" [value]="gender">
                   <option *ngFor="let g of genders" >{{g}}</option>
                 </select>
-              </td>
+              </td> -->
 
-              <td *ngIf="!isEdit">
+              <td>
                 <label>{{ gender }}</label>
               </td>
             </tr>
@@ -72,7 +74,7 @@
     <div class="aadhar-card-number" >
       <!-- <label *ngIf="!isEdit">{{ addharnumber }}</label> -->
       <!-- <input *ngIf="isEdit" [type]="'text'" [value]="addharnumber" class="aadhar-card-number"/> -->
-      <p-inputMask [disabled]="!isEdit" mask="9999 9999 9999 9999" [(ngModel)]="addharnumber" class="aadhar-number"  placeholder="9999 9999 9999 9999"></p-inputMask>
+      <p-inputMask [disabled]="!isEdit" mask="9999 9999 9999" [size]="12" [(ngModel)]="addharnumber" class="aadhar-number"  placeholder="9999 9999 9999"></p-inputMask>
     </div>
   </mat-card-content>
   <mat-card-footer>

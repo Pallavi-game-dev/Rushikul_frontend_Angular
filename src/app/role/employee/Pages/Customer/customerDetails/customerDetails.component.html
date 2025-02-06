@@ -1,39 +1,44 @@
 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="panelOpenState">
   <mat-expansion-panel-header>
-    <mat-panel-title class="Kunadali_title"> Pallavi Patil </mat-panel-title>
+    <mat-panel-title class="Kunadali_title"> {{customerData?.customer_first_name+" "  + customerData?.customer_last_name}} </mat-panel-title>
   </mat-expansion-panel-header>
   <div class="profile_con">
     <div class="profile-mail">
-      <mat-icon class="mat-18">mail</mat-icon><span>thakurag.com</span>
+      <mat-icon class="mat-18">mail</mat-icon><span>{{customerData?.customer_email}}</span>
     </div>
     <div class="profile-mail">
-      <mat-icon class="mat-18">phone</mat-icon><span>7039152302</span>
+      <mat-icon class="mat-18">phone</mat-icon><span>{{customerData?.mobile_number}}</span>
     </div>
     <div class="profile-mail">
-      <mat-icon class="mat-18">room</mat-icon><span>Airoli Navi Mumbai</span>
+      <mat-icon class="mat-18">room</mat-icon><span>{{customerData?.address}}</span>
     </div>
   </div>
   <hr />
   <div class="profile_subcon">
     <div class="profile_subcon_grid">
       <label>Adharcard Number:</label>
-      <span>3216735736363218</span>
+      <span>{{customerData?.addharcard_number}}</span>
     </div>
     <div class="profile_subcon_grid">
       <label>Pancard Number:</label>
-      <span>CVZPP2043N</span>
+      <span>{{customerData?.pancard_number}}</span>
     </div>
     <div class="profile_subcon_grid">
       <label>Branch:</label>
-      <span>Head Office</span>
+      <span>{{getBranchName(customerData?.branch_id)}}</span>
     </div>
     <div class="profile_subcon_grid">
       <label>Gendar:</label>
-      <span>Female</span>
+      <span>{{customerData?.gender}}</span>
     </div>
   </div>
-  <div >
-  <app-aadhar-card></app-aadhar-card>
+  <div class="identity-cards" >
+  <app-aadhar-card [customerDetails]="customerData" *ngIf="customerData" (updateDetails)="getCustomerDetails()" ></app-aadhar-card>
+  <app-pan-card 
+  *ngIf="customerData"
+  [customerDetails]="customerData" 
+  (updateDetails)="getCustomerDetails()">
+</app-pan-card>
 </div>
 </mat-expansion-panel>
 <section class="details_container">

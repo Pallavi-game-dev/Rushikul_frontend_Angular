@@ -106,3 +106,44 @@ body {
 .ag-body {
   min-height: 250px;
 }
+
+.notification .swal2-popup.swal2-toast {
+  padding: 10px 10px;
+  font-size: 12px;
+
+  .swal2-title {
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-right: 0;
+  }
+}
+
+.notification .swal2-popup.success {
+  border-color: #37b400;
+  color: #fff;
+  background-color: #37b400;
+}
+
+.notification .swal2-popup.error {
+  border-color: #f31700;
+  color: #fff;
+  background-color: #f31700;
+}
+
+.notification .swal2-popup.info {
+  border-color: #0058e9;
+  color: #fff;
+  background-color: #0058e9;
+}
+
+.notification .swal2-popup.warning {
+  border-color: #ffc000;
+  color: #000;
+  background-color: #ffc000;
+}
+
+.notification .swal2-icon.swal2-warning {
+  color: #424242;
+}

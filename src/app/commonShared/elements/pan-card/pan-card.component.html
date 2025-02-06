@@ -1,0 +1,46 @@
+<div class="pan-card">
+    <mat-icon class="editIcon" title="Edit" *ngIf="!isEdit" (click)="isEdit = !isEdit">edit</mat-icon>
+    <button mat-icon-button class="editIcon" *ngIf="isEdit" > <mat-icon title="Save" [ngStyle]="" (click)="saveDetails()">save</mat-icon></button>
+   
+
+    <div class="header">
+        <span>आयकर विभाग</span>
+        <span>भारत सरकार</span>
+
+    </div>
+    <div class="header" style="margin-top: 5px;">
+        <span>INCOME TAX DEPARTMENT</span>
+        <span>GOVT. OF INDIA</span>
+    </div>
+    <div class="title">स्थायी लेखा संख्या कार्ड<br>Permanent Account Number Card</div>
+    <div class="pan-number">
+        <label for="" class="pan-number-label" *ngIf="!isEdit">
+            {{panNumber}}
+        </label>
+        <input type="text" class="pan-number" *ngIf="isEdit" [(ngModel)]="panNumber" minlength="10" maxlength="10" pattern="/^[A-Z]{5}\d{4}[A-Z]$/"  />
+    </div>
+
+    <div class="main-content">
+        <div class="left-section">
+            <div class="photo">
+                <img src="../../../../assets/aavtar.png" style="width: 100%;height: 100%; object-fit: cover;" />
+            </div>
+        </div>
+        <div class="details">
+            <p>Name:
+                <strong>{{name}}</strong>
+                <!-- <input *ngIf="isEdit" [(ngModel)]="name" type="text" /> -->
+            </p>
+            <p>Father's Name: <strong>{{fathersName}}
+                <!-- <input *ngIf="isEdit" [(ngModel)]="fathersName" type="text" />  -->
+            </strong> </p>
+            <p>Date of Birth: <strong *ngIf="!isEdit">{{dob| date:'dd/MM/yyyy'}}</strong><input type="date"
+                    *ngIf="isEdit" [(ngModel)]="dob" [max]="todays_date" /></p>
+        </div>
+        <div class="right-section">
+            <div class="qr-code">
+                <img src="../../../../assets/QRCode.svg" style="width: 90px; border-radius: 6px" />
+            </div>
+        </div>
+    </div>
+</div>

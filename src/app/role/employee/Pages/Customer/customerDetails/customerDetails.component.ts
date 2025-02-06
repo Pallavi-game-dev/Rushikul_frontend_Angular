@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/API/api.service';
+
 
 @Component({
   selector: 'app-customerDetails',
@@ -12,23 +13,36 @@ export class CustomerDetailsComponent implements OnInit {
   queryParams: any;
   panelOpenState:boolean = true;
   customerData: any;
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  branches: any;
+
+  constructor(private route: ActivatedRoute, private apiService: ApiService,private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
-      console.log(data);
+      this.getAllBranches();
       this.queryParams = data
       this.getCustomerDetails();
     })
   }
 
+  getAllBranches() {
+    this.apiService.getBranchList().subscribe((res: any) => {
+      this.branches = res?.data;
+    })
+  }
+
   getCustomerDetails() {
     this.apiService.getCustomerList({customer_id:this.queryParams.customer_id}).subscribe((res: any) => {
-      this.customerData = res.data;
+      this.customerData=undefined;
+      this.customerData = res?.data && res?.data[0];
       console.log(res.data);
+      this.cdRef.detectChanges();
     })
 
+  }
 
+  getBranchName(branch_id: number) {
+    return this.branches?.find((branch: any) => branch.branch_id === branch_id)?.branch_name
   }
   
 }

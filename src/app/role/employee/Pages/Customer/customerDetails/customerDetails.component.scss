@@ -1,4 +1,4 @@
-.Kunadali_title{
+.Kunadali_title {
   padding: 10px;
   color: white;
   background: #035e96;
@@ -7,11 +7,12 @@
   border-radius: 8px;
 }
 
-.profile_con{
+.profile_con {
   display: flex;
   justify-content: space-between;
   width: 98%;
-  .profile-mail{
+
+  .profile-mail {
     display: flex;
     gap: 10px;
     font-size: 16px;
@@ -19,25 +20,58 @@
     justify-content: center;
   }
 }
-.profile_subcon{
+
+.profile_subcon {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  .profile_subcon_grid{
+
+  .profile_subcon_grid {
     display: flex;
     gap: 10px;
     padding: 10px;
     font-size: 16px;
-    label{
+
+    label {
       font-weight: 800;
     }
   }
 }
-.details_container{
+
+.details_container {
   margin: 30px;
   display: flex;
   flex-wrap: wrap;
   gap: 63px;
   justify-content: center;
+}
+
+.identity-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .details_container {
+    margin: 10px;
+    gap: 10px;
+  }
+
+  .profile_subcon {
+    gap: 10px;
+  }
+
+  .profile_subcon_grid {
+    gap: 5px;
+  }
+
+  .identity-cards {
+    gap: 10px;
+    }
+  
 }
