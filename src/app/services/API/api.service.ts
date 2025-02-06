@@ -47,4 +47,8 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}update_customer`, body)
   }
 
+  getCustomerKundali(body: any) {
+    return this.http.post(`${this.baseUrl}customer_kundali`, body)
+  }
+
 }

@@ -32,9 +32,9 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   getCustomerDetails() {
-    this.apiService.getCustomerList({customer_id:this.queryParams.customer_id}).subscribe((res: any) => {
+    this.apiService.getCustomerKundali({customer_id:this.queryParams.customer_id}).subscribe((res: any) => {
       this.customerData=undefined;
-      this.customerData = res?.data && res?.data[0];
+      this.customerData = res?.data && res?.data[0]?.customer_details;
       console.log(res.data);
       this.cdRef.detectChanges();
     })
