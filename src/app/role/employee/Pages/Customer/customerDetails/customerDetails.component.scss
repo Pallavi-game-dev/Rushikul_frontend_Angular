@@ -1,6 +1,6 @@
 .Kunadali_title {
   padding: 10px;
-  color: white;
+  color: white !important;
   background: #035e96;
   font-weight: bolder;
   font-size: 24px;
@@ -10,14 +10,16 @@
 .profile_con {
   display: flex;
   justify-content: space-between;
-  width: 98%;
+  flex-wrap: wrap;
 
   .profile-mail {
     display: flex;
     gap: 10px;
     font-size: 16px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex: 0 0 50%;
+    margin-top: 5px;
   }
 }
 
@@ -39,21 +41,36 @@
   }
 }
 
-.details_container {
-  margin: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 63px;
-  justify-content: center;
-}
 
 .identity-cards {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   flex-wrap: wrap;
   margin: 10px 0;
   margin-top: 20px;
+}
+
+.customer_details {
+  display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+  article {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    app-small-card{
+      display: flex;
+    }
+  }
+  .details_container{
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      grid-gap: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -72,6 +89,6 @@
 
   .identity-cards {
     gap: 10px;
-    }
-  
+  }
+
 }

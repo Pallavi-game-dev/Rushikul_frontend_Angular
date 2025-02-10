@@ -1,7 +1,12 @@
-<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="panelOpenState">
+
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = true" [expanded]="panelOpenState" [disabled]="true">
   <mat-expansion-panel-header>
     <mat-panel-title class="Kunadali_title"> {{customerData?.customer_first_name+" "  + customerData?.customer_last_name}} </mat-panel-title>
   </mat-expansion-panel-header>
+</mat-expansion-panel>
+<mat-divider></mat-divider>
+<section class="customer_details">
+<article class="profile_container">
   <div class="profile_con">
     <div class="profile-mail">
       <mat-icon class="mat-18">mail</mat-icon><span>{{customerData?.customer_email}}</span>
@@ -12,24 +17,9 @@
     <div class="profile-mail">
       <mat-icon class="mat-18">room</mat-icon><span>{{customerData?.address}}</span>
     </div>
-  </div>
-  <hr />
-  <div class="profile_subcon">
-    <div class="profile_subcon_grid">
-      <label>Adharcard Number:</label>
-      <span>{{customerData?.addharcard_number}}</span>
-    </div>
-    <div class="profile_subcon_grid">
-      <label>Pancard Number:</label>
-      <span>{{customerData?.pancard_number}}</span>
-    </div>
-    <div class="profile_subcon_grid">
-      <label>Branch:</label>
+    <div class="profile-mail">
+      <mat-icon>account_balance</mat-icon>
       <span>{{getBranchName(customerData?.branch_id)}}</span>
-    </div>
-    <div class="profile_subcon_grid">
-      <label>Gendar:</label>
-      <span>{{customerData?.gender}}</span>
     </div>
   </div>
   <div class="identity-cards" >
@@ -40,8 +30,9 @@
   (updateDetails)="getCustomerDetails()">
 </app-pan-card>
 </div>
-</mat-expansion-panel>
-<section class="details_container">
+</article>
+
+<article class="details_container">
   <app-small-card
     [title]="'Home Loan'"
     [sub_title]="'300000/-'"
@@ -72,4 +63,5 @@
     [src]="'../../../../../../assets/travel_loan.svg'"
     [card_content]="'1'"
   ></app-small-card>
+</article>
 </section>
