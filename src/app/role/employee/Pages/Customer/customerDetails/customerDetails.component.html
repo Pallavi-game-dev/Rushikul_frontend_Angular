@@ -4,7 +4,7 @@
     <mat-panel-title class="Kunadali_title"> {{customerData?.customer_first_name+" "  + customerData?.customer_last_name}} </mat-panel-title>
   </mat-expansion-panel-header>
 </mat-expansion-panel>
-<mat-divider></mat-divider>
+
 <section class="customer_details">
 <article class="profile_container">
   <div class="profile_con">
@@ -22,6 +22,7 @@
       <span>{{getBranchName(customerData?.branch_id)}}</span>
     </div>
   </div>
+  <mat-divider></mat-divider>
   <div class="identity-cards" >
   <app-aadhar-card [customerDetails]="customerData" *ngIf="customerData" (updateDetails)="getCustomerDetails()" ></app-aadhar-card>
   <app-pan-card 
